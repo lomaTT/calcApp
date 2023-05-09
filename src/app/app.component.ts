@@ -28,7 +28,7 @@ export class AppComponent {
   onFunctionClick = (val: string) => {
     if (val === 'c') {
       this.clearAll();
-    } 
+    }
     else if (this.funcT === 'NoFunction') {
       this.firstNumber = this.calValue;
       this.calValue = 0;
@@ -45,26 +45,29 @@ export class AppComponent {
     if (this.funcT === '+') {
       const Total = this.firstNumber + this.secondNumber;
       this.totalAssignValues(Total, val);
+
     }
     if (this.funcT === '-') {
       const Total = this.firstNumber - this.secondNumber;
       this.totalAssignValues(Total, val);
+
     }
-    if (this.funcT === '*') {
+    if (this.funcT === 'X') {
       const Total = this.firstNumber * this.secondNumber;
       this.totalAssignValues(Total, val);
+
     }
     if (this.funcT === '/') {
       const Total = this.firstNumber / this.secondNumber;
       this.totalAssignValues(Total, val);
+
     }
     if (this.funcT === '%') {
       const Total = this.firstNumber % this.secondNumber;
       this.totalAssignValues(Total, val);
+
     }
-    // if (this.funcT === '.') {
-    //   this.calNumber += '.';
-    // }
+
   }
 
   totalAssignValues = (Total: number, val: string) => {
@@ -73,9 +76,7 @@ export class AppComponent {
     this.secondNumber = 0;
     this.calNumber = 'noValue';
     this.funcT = val;
-    if (val === '=') {
-      this.onEqualPress();
-    }
+    if (val === '=') this.onEqualPress();
   }
 
   onNumberClick = (val: string) => {
@@ -84,9 +85,7 @@ export class AppComponent {
     } else {
       this.calNumber = val;
     }
-
     this.calValue = parseFloat(this.calNumber);
-
     if (this.calNumber.length > 8) {
       this.calNumber = 'noValue';
     }
